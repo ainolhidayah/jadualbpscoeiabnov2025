@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadual Interaktif BPS @ CoE IAB 2025</title>
+    <!-- Muat naik Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Import fon Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Guna fon Inter sebagai fon utama */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Sembunyikan tab-content secara lalai */
+        .tab-content {
+            display: none;
+        }
+        /* Tunjukkan tab-content yang aktif */
+        .tab-content.active {
+            display: block;
+        }
+        /* Gaya untuk modal backdrop */
+        #modal-backdrop {
+            transition: opacity 0.3s ease-in-out;
+        }
+        /* Gaya untuk modal content */
+        #modal-content {
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            transform: translateY(-20px);
+            opacity: 0;
+        }
+        /* Gaya untuk modal yang aktif */
+        #modal-container.active #modal-backdrop {
+            opacity: 1;
+        }
+        #modal-container.active #modal-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4 md:p-8">
+    <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-lg overflow-hidden">
+        <header class="bg-blue-700 text-white p-6">
+            <h1 class="text-2xl md:text-3xl font-bold">Jadual Bengkel Pembangunan Kapasiti Staf @ CoE IAB 2025</h1>
+            <p class="text-blue-100 mt-1">9 - 13 November 2025</p>
+        </header>
+
+        <!-- Tab Headers -->
+        <div class="border-b border-gray-200">
+            <nav class="flex flex-wrap -mb-px px-4" aria-label="Tabs">
+                <!-- Tab Button untuk setiap hari -->
+                <button class="tab-button active-tab whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm border-blue-500 text-blue-600" data-tab="day-9">
+                    9 Nov (Ahad)
+                </button>
+                <button class="tab-button whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 mx-2" data-tab="day-10">
+                    10 Nov (Isnin)
+                </button>
+                <button class="tab-button whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 mx-2" data-tab="day-11">
+                    11 Nov (Selasa)
+                </button>
+                <button class="tab-button whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 mx-2" data-tab="day-12">
+                    12 Nov (Rabu)
+                </button>
+                <button class="tab-button whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 mx-2" data-tab="day-13">
+                    13 Nov (Khamis)
+                </button>
+            </nav>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="p-6">
+            <!-- Kandungan Hari 1: 9 Nov (Ahad) -->
+            <div id="day-9" class="tab-content active">
+                <div class="space-y-6">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">Sepanjang Hari</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-blue-700">Perjalanan</h3>
+                            <p class="text-gray-600">Peserta bergerak ke lokasi bengkel.</p>
+                        </div>
+                    </div>
+                    <div class="border-t pt-6 flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">3:30 PM - 5:00 PM</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-blue-700">Pendaftaran Asrama</h3>
+                            <p class="text-gray-600">Peserta mendaftar masuk ke asrama.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kandungan Hari 2: 10 Nov (Isnin) -->
+            <div id="day-10" class="tab-content">
+                <div class="space-y-6">
+                    <!-- Aktiviti Pagi -->
+                    <div class="flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">6:30 AM - 6:45 AM</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-blue-700">Hadith 40 (Peserta Muslim IAB Cawangan)</h3>
+                            <p class="text-gray-600">Lokasi: Dalam talian</p>
+                            <a href="http://meet.google.com/vyu-wypm-trs" target="_blank" class="text-blue-500 hover:underline">Sertai Google Meet</a>
+                        </div>
+                    </div>
+                    <div class="border-t pt-6 flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">7:00 AM - 7:30 AM</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-gray-500">Sarapan</h3>
+                        </div>
+                    </div>
+                    <div class="border-t pt-6 flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">7:30 AM - 8:00 AM</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-blue-700">Senamrobik</h3>
+                            <p class="text-gray-600">Lokasi: Auditorium Perdana (Smart Casual)</p>
+                        </div>
+                    </div>
+                    <div class="border-t pt-6 flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">8:00 AM - 8:30 AM</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-blue-700">Taklimat Urus Setia</h3>
+                            <p class="text-gray-600">Lokasi: Auditorium Perdana (Smart Casual)</p>
+                            <button class="open-modal-btn mt-2 bg-blue-500 text-white px-3 py-1 rounded-md text-sm hover:bg-blue-600" 
+                                    data-title="Pautan Taklimat Urus Setia (10 Nov)"
+                                    data-links='[
+                                        {"label": "Pautan Pendaftaran BPS@CoE IAB 2025", "url": "https://sistem.iab.edu.my/insyst/modul-qrcode/daftar_peserta.php?id=47305"},
+                                        {"label": "Pautan Bahan Taklimat", "url": "https://drive.google.com/drive/folders/1hV0Bi__7lPtXRPna8SXESpnBF0gHgGw5?usp=sharing"},
+                                        {"label": "Pautan Kehadiran Hari Pertama", "url": "https://docs.google.com/forms/d/e/1FAIpQLSdK8pD1h1ZySqbJeAIY6KdYKDIWLwOpdDTytni_xE5IaXaE_A/viewform?usp=sharing&ouid=103468715679062145551"}
+                                    ]'>
+                                Lihat Pautan Berkaitan
+                            </button>
+                        </div>
+                    </div>
+                    <div class="border-t pt-6 flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">8:30 AM - 10:30 AM</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-blue-700">Aktiviti 1: Taklimat Aktiviti Bengkel & Majlis Perasmian</h3>
+                            <p class="text-gray-600">Lokasi: Auditorium Perdana (Smart Casual)</p>
+                            <a href="https://drive.google.com/drive/folders/1Po-L1ECypzd-0dQp7grwQ5b2i5d1ytfT?usp=sharing" target="_blank" class="text-blue-500 hover:underline">Lihat Bahan Taklimat</a>
+                        </div>
+                    </div>
+                    <div class="border-t pt-6 flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">10:30 AM - 11:00 AM</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-gray-500">Rehat</h3>
+                        </div>
+                    </div>
+                    <!-- Aktiviti Petang -->
+                    <div class="border-t pt-6 flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">11:00 AM - 1:00 PM</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-blue-700">Aktiviti 2: Bengkel Pemurnian Fungsi Pusat/ Jabatan</h3>
+                            <p class="text-gray-600">Pakaian: Smart Casual</p>
+                            <button class="open-modal-btn mt-2 bg-blue-500 text-white px-3 py-1 rounded-md text-sm hover:bg-blue-600" 
+                                    data-title="Pautan Bengkel Pemurnian Fungsi"
+                                    data-links='[
+                                        {"label": "Borang Pemurnian Fungsi", "url": "https://docs.google.com/spreadsheets/d/1C_mHFLpIy9Pu5HadOA6lCLDNdCF51DKTs2NrUZa4OqA/edit?gid=0#gid=0"},
+                                        {"label": "Lokasi Perbengkelan", "url": "https://docs.google.com/spreadsheets/d/1_jrkbBjIDt12OchQUVggI6vP_0OoOi2t/edit?usp=sharing&ouid=103468715679062145551&rtpof=true&sd=true"}
+                                    ]'>
+                                Lihat Pautan Bengkel
+                            </button>
+                        </div>
+                    </div>
+                    <div class="border-t pt-6 flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">1:00 PM - 2:00 PM</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-gray-500">Makan Tengah Hari</h3>
+                        </div>
+                    </div>
+                    <div class="border-t pt-6 flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">2:00 PM - 5:00 PM</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-blue-700">Sambungan Aktiviti 2: Bengkel Pemurnian Fungsi Pusat/ Jabatan</h3>
+                            <p class="text-gray-600">Pakaian: Smart Casual</p>
+                            <button class="open-modal-btn mt-2 bg-blue-500 text-white px-3 py-1 rounded-md text-sm hover:bg-blue-600" 
+                                    data-title="Pautan Bengkel Pemurnian Fungsi"
+                                    data-links='[
+                                        {"label": "Borang Pemurnian Fungsi", "url": "https://docs.google.com/spreadsheets/d/1C_mHFLpIy9Pu5HadOA6lCLDNdCF51DKTs2NrUZa4OqA/edit?gid=0#gid=0"},
+                                        {"label": "Lokasi Perbengkelan", "url": "https://docs.google.com/spreadsheets/d/1_jrkbBjIDt12OchQUVggI6vP_0OoOi2t/edit?usp=sharing&ouid=103468715679062145551&rtpof=true&sd=true"}
+                                    ]'>
+                                Lihat Pautan Bengkel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kandungan Hari 3: 11 Nov (Selasa) -->
+            <div id="day-11" class="tab-content">
+                <div class="space-y-6">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">6:30 AM - 6:45 AM</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-blue-700">Hadith 40 (Peserta Muslim IAB Cawangan)</h3>
+                            <p class="text-gray-600">Lokasi: Dalam talian</p>
+                            <a href="http://meet.google.com/vyu-wypm-trs" target="_blank" class="text-blue-500 hover:underline">Sertai Google Meet</a>
+                        </div>
+                    </div>
+                     <div class="border-t pt-6 flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">7:00 AM - 7:30 AM</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-gray-500">Sarapan</h3>
+                        </div>
+                    </div>
+                    <div class="border-t pt-6 flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">7:30 AM - 8:00 AM</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-blue-700">Senamrobik</h3>
+                            <p class="text-gray-600">Lokasi: Dataran Hadapan Rumah Pengarah (Baju sukan)</p>
+                        </div>
+                    </div>
+                    <div class="border-t pt-6 flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">8:00 AM - 8:30 AM</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-blue-700">Taklimat Urus Setia</h3>
+                            <p class="text-gray-600">Pakaian: Smart Casual</p>
+                            <button class="open-modal-btn mt-2 bg-blue-500 text-white px-3 py-1 rounded-md text-sm hover:bg-blue-600" 
+                                    data-title="Pautan Taklimat Urus Setia (11 Nov)"
+                                    data-links='[
+                                        {"label": "Pautan Bahan Taklimat", "url": "https://drive.google.com/drive/folders/1hV0Bi__7lPtXRPna8SXESpnBF0gHgGw5?usp=sharing"},
+                                        {"label": "Pautan Kehadiran Hari Kedua", "url": "https://forms.gle/vRrrCSsskGcwCBtx6"}
+                                    ]'>
+                                Lihat Pautan Berkaitan
+                            </button>
+                        </div>
+                    </div>
+                    <div class="border-t pt-6 flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">8:30 AM - 10:30 AM</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-blue-700">Aktiviti 2: Bengkel Pemurnian Fungsi Pusat/ Jabatan</h3>
+                            <p class="text-gray-600">Pakaian: Smart Casual</p>
+                            <button class="open-modal-btn mt-2 bg-blue-500 text-white px-3 py-1 rounded-md text-sm hover:bg-blue-600" 
+                                    data-title="Pautan Bengkel Pemurnian Fungsi"
+                                    data-links='[
+                                        {"label": "Borang Pemurnian Fungsi", "url": "https://docs.google.com/spreadsheets/d/1C_mHFLpIy9Pu5HadOA6lCLDNdCF51DKTs2NrUZa4OqA/edit?gid=0#gid=0"},
+                                        {"label": "Lokasi Perbengkelan", "url": "https://docs.google.com/spreadsheets/d/1_jrkbBjIDt12OchQUVggI6vP_0OoOi2t/edit?usp=sharing&ouid=103468715679062145551&rtpof=true&sd=true"}
+                                    ]'>
+                                Lihat Pautan Bengkel
+                            </button>
+                        </div>
+                    </div>
+                     <div class="border-t pt-6 flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">10:30 AM - 11:00 AM</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-gray-500">Rehat</h3>
+                        </div>
+                    </div>
+                    <div class="border-t pt-6 flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">11:00 AM - 1:00 PM</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-blue-700">Aktiviti 3: Pembentangan</h3>
+                            <p class="text-gray-600">Lokasi: Auditorium Perdana (Smart Casual)</p>
+                            <a href="https://drive.google.com/drive/folders/1IuT6yIpvQggF0TbfyEs1hY_iCJDcgIQc?usp=sharing" target="_blank" class="text-blue-500 hover:underline">Lihat Bahan Pembentangan</a>
+                        </div>
+                    </div>
+                    <div class="border-t pt-6 flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">1:00 PM - 2:00 PM</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-gray-500">Makan Tengah Hari</h3>
+                        </div>
+                    </div>
+                    <div class="border-t pt-6 flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">2:00 PM - 5:00 PM</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-blue-700">Aktiviti 4: Ceramah: Perkongsian Profesional</h3>
+                            <p class="text-gray-600">Lokasi: Auditorium Perdana (Smart Casual)</p>
+                            <p class="text-sm text-gray-500 mt-2">Penceramah: Encik Norazmir bin Ahmad, Dr. Nor Azman bin, Dr. Zaharul Arifin bin Md. Zin, Farah Mardhy binti Aman, Adi bin Hassim</p>
+                            <a href="https://drive.google.com/drive/folders/1rM3wJGakPNKsLw9-OR5bCoOFgE4jlgqj?usp=sharing" target="_blank" class="text-blue-500 hover:underline mt-2 inline-block">Lihat Bahan Ceramah</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kandungan Hari 4: 12 Nov (Rabu) -->
+            <div id="day-12" class="tab-content">
+                <div class="space-y-6">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">6:30 AM - 6:45 AM</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-blue-700">Hadith 40 (Peserta Muslim IAB Cawangan)</h3>
+                            <p class="text-gray-600">Lokasi: Dalam talian</p>
+                            <a href="http://meet.google.com/vyu-wypm-trs" target="_blank" class="text-blue-500 hover:underline">Sertai Google Meet</a>
+                        </div>
+                    </div>
+                    <div class="border-t pt-6 flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">7:00 AM - 7:30 AM</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-gray-500">Sarapan</h3>
+                        </div>
+                    </div>
+                    <div class="border-t pt-6 flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">7:30 AM - 8:00 AM</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-blue-700">Senamrobik</h3>
+                            <p class="text-gray-600">Lokasi: Dataran Hadapan Rumah Pengarah (Baju sukan)</p>
+                        </div>
+                    </div>
+                    <div class="border-t pt-6 flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">8:00 AM - 3:30 PM</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-blue-700">Aktiviti 5: Pembangunan Kerja Sepasukan (Sinergi Wadah Sepasukan) & Penilaian</h3>
+                            <p class="text-gray-600">Pakaian: Baju sukan</p>
+                            <a href="https://forms.gle/72auFqSrnosBJT8v5" target="_blank" class="text-blue-500 hover:underline mt-2 inline-block">Pautan Kehadiran Hari Ketiga</a>
+                        </div>
+                    </div>
+                    <!-- Nota: Menambah waktu rehat berdasarkan jadual umum -->
+                    <div class="border-t pt-6 flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">10:30 AM - 11:00 AM</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-gray-500">Rehat (diuruskan dalam Aktiviti 5)</h3>
+                        </div>
+                    </div>
+                    <div class="border-t pt-6 flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">1:00 PM - 2:00 PM</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-gray-500">Makan Tengah Hari (diuruskan dalam Aktiviti 5)</h3>
+                        </div>
+                    </div>
+                    <div class="border-t pt-6 flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">3:30 PM - 5:00 PM</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-blue-700">Aktiviti 6: Rumusan Program & Majlis “Sinergi Gemilang IAB: Penutupan Perasmian”</h3>
+                            <p class="text-gray-600">Amanat Kepemimpinan oleh Pengarah</p>
+                            <a href="https://drive.google.com/drive/folders/104XdiYU72u8qA4_0yddFiOmhk2sH9qIU?usp=sharing" target="_blank" class="text-blue-500 hover:underline mt-2 inline-block">Pautan Memori BPS@IAB 2025</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kandungan Hari 5: 13 Nov (Khamis) -->
+            <div id="day-13" class="tab-content">
+                <div class="space-y-6">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 font-semibold text-gray-800">Sepanjang Hari</div>
+                        <div class="w-full md:w-2/3 mt-2 md:mt-0">
+                            <h3 class="text-lg font-semibold text-blue-700">Perjalanan Pulang</h3>
+                            <p class="text-gray-600">Peserta bergerak pulang ke destinasi masing-masing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal Container -->
+    <div id="modal-container" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+        <!-- Modal Backdrop -->
+        <div id="modal-backdrop" class="absolute inset-0 bg-black/50 opacity-0"></div>
+        
+        <!-- Modal Content -->
+        <div id="modal-content" class="relative bg-white rounded-lg shadow-xl w-full max-w-md p-6 opacity-0">
+            <!-- Modal Header -->
+            <div class="flex justify-between items-center border-b pb-3">
+                <h3 id="modal-title" class="text-lg font-semibold text-gray-900">Pautan Berkaitan</h3>
+                <button id="close-modal-btn" class="text-gray-400 hover:text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            
+            <!-- Modal Body -->
+            <div id="modal-body" class="mt-4 space-y-3 max-h-60 overflow-y-auto">
+                <!-- Pautan akan dimasukkan di sini oleh JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabs = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            // Logik untuk menukar tab
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Nyahaktifkan semua tab dan kandungan
+                    tabs.forEach(item => {
+                        item.classList.remove('active-tab', 'border-blue-500', 'text-blue-600');
+                        item.classList.add('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+                    });
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+
+                    // Aktifkan tab yang diklik
+                    tab.classList.add('active-tab', 'border-blue-500', 'text-blue-600');
+                    tab.classList.remove('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+                    
+                    const targetContent = document.getElementById(tab.dataset.tab);
+                    if (targetContent) {
+                        targetContent.classList.add('active');
+                    }
+                });
+            });
+
+            // Logik untuk Modal (pop-up pautan)
+            const modalContainer = document.getElementById('modal-container');
+            const modalBackdrop = document.getElementById('modal-backdrop');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const openModalBtns = document.querySelectorAll('.open-modal-btn');
+            const modalTitle = document.getElementById('modal-title');
+            const modalBody = document.getElementById('modal-body');
+
+            // Fungsi untuk membuka modal
+            const openModal = (title, links) => {
+                modalTitle.textContent = title;
+                modalBody.innerHTML = ''; // Kosongkan pautan sebelumnya
+                
+                links.forEach(link => {
+                    const a = document.createElement('a');
+                    a.href = link.url;
+                    a.target = '_blank';
+                    a.rel = 'noopener noreferrer';
+                    a.className = 'block w-full p-3 bg-gray-100 rounded-md text-blue-600 font-medium hover:bg-gray-200 transition';
+                    a.textContent = link.label;
+                    modalBody.appendChild(a);
+                });
+
+                modalContainer.classList.remove('hidden');
+                modalContainer.classList.add('active');
+            };
+
+            // Fungsi untuk menutup modal
+            const closeModal = () => {
+                modalContainer.classList.remove('active');
+                // Tunggu animasi selesai sebelum sembunyikan
+                setTimeout(() => {
+                    modalContainer.classList.add('hidden');
+                }, 300);
+            };
+
+            // Tambah event listener pada butang "Lihat Pautan"
+            openModalBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const title = btn.dataset.title;
+                    const links = JSON.parse(btn.dataset.links);
+                    openModal(title, links);
+                });
+            });
+
+            // Tambah event listener untuk tutup modal
+            closeModalBtn.addEventListener('click', closeModal);
+            modalBackdrop.addEventListener('click', closeModal);
+        });
+    </script>
+</body>
+</html>
